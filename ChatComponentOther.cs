@@ -1,26 +1,23 @@
-﻿using LibVLCSharp.Shared;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ChatApp
 {
-    public partial class ChatComponent : UserControl
+    public partial class ChatComponentOther : UserControl
     {
-        public ChatComponent()
+        public ChatComponentOther()
         {
             InitializeComponent();
         }
         public ChatMessage chatMessage;
-        public ChatComponent(ChatMessage chatMessage)
+        public ChatComponentOther(ChatMessage chatMessage)
         {
             InitializeComponent();
             this.chatMessage = chatMessage;
@@ -46,39 +43,34 @@ namespace ChatApp
             }
         }
 
-        public void initText()
+        private void ChatComponentOther_Load(object sender, EventArgs e)
         {
 
-            TextMessageComponent comp = new TextMessageComponent(chatMessage);
-            comp.Location = new Point(15, 0);
-            pnMain.Controls.Add(comp);
         }
-        public void initImage()
+        public void initFile()
         {
-            ImageMessageComponent comp = new ImageMessageComponent(chatMessage);
-            comp.Location = new Point(15, 0);
+            FileMessageComponent comp = new FileMessageComponent(chatMessage);
+            comp.Location = new Point(0, 0);
             pnMain.Controls.Add(comp);
-            lblDate.Text = "image";
         }
         public void initVideo()
         {
             VideoMessageComponent comp = new VideoMessageComponent(chatMessage);
-            comp.Location = new Point(15, 0);
+            comp.Location = new Point(0, 0);
             pnMain.Controls.Add(comp);
-        }
 
-        public void initFile()
+        }
+        public void initText()
         {
-            FileMessageComponent comp = new FileMessageComponent(chatMessage);
-            comp.Location = new Point(15, 0);
+            TextMessageComponent comp = new TextMessageComponent(chatMessage);
+            comp.Location = new Point(0, 0);
             pnMain.Controls.Add(comp);
         }
-
-        #region picture message
-
-
-
-        #endregion
-
+        public void initImage()
+        {
+            ImageMessageComponent comp=new ImageMessageComponent(chatMessage);
+            comp.Location=new Point(0,0);
+            pnMain.Controls.Add(comp);
+        }
     }
 }

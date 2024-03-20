@@ -34,13 +34,29 @@ namespace ChatApp
         }
         public void LoadMessage()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 9; i++)
             {
                 ChatMessage chatMessage=new ChatMessage("", DateTime.Now, "", "", EnumTypeOfMessage.VIDEO);
-                ChatComponent chatComponent = new ChatComponent(chatMessage);
-                chatComponent.Location = new Point(10, 10 + 130 * i);
+                if (i % 2 == 0)
+                {
+                    chatMessage= new ChatMessage("", DateTime.Now, "", "", EnumTypeOfMessage.IMAGE);
+                }
 
+
+                if (i % 7== 0)
+                {
+                    ChatComponent chatComponent = new ChatComponent(chatMessage);
+                    chatComponent.Location = new Point(200, 10 + 150 * i);
                 pnMainChat.Controls.Add(chatComponent);
+
+                }
+                else
+                {
+                ChatComponentOther chatComponent = new ChatComponentOther(chatMessage);
+                chatComponent.Location = new Point(10, 10 + 150 * i);
+                pnMainChat.Controls.Add(chatComponent);
+                }
+
 
             }
         }

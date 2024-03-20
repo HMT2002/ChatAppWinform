@@ -1,6 +1,6 @@
 ﻿namespace ChatApp
 {
-    partial class ChatComponent
+    partial class TextMessageComponent
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,43 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblDate = new System.Windows.Forms.Label();
-            this.pnMain = new System.Windows.Forms.Panel();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblDate
+            // lblMessage
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(358, 112);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
-            this.lblDate.TabIndex = 3;
-            this.lblDate.Text = "Date";
-            this.lblDate.Visible = false;
+            this.lblMessage.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.Location = new System.Drawing.Point(23, 15);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(304, 60);
+            this.lblMessage.TabIndex = 6;
+            this.lblMessage.Text = "label302412345345";
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnMain
-            // 
-            this.pnMain.Location = new System.Drawing.Point(10, 10);
-            this.pnMain.Name = "pnMain";
-            this.pnMain.Size = new System.Drawing.Size(378, 100);
-            this.pnMain.TabIndex = 4;
-            // 
-            // ChatComponent
+            // TextMessageComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Controls.Add(this.pnMain);
-            this.Controls.Add(this.lblDate);
-            this.Name = "ChatComponent";
-            this.Size = new System.Drawing.Size(400, 135);
+            this.Controls.Add(this.lblMessage);
+            this.Name = "TextMessageComponent";
+            this.Size = new System.Drawing.Size(350, 90);
+            this.Load += new System.EventHandler(this.TextMessageComponent_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Panel pnMain;
+
+        private System.Windows.Forms.Label lblMessage;
     }
 }

@@ -37,17 +37,17 @@
             // txtChat
             // 
             this.txtChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChat.Location = new System.Drawing.Point(327, 412);
+            this.txtChat.Location = new System.Drawing.Point(244, 412);
             this.txtChat.Name = "txtChat";
-            this.txtChat.Size = new System.Drawing.Size(344, 26);
+            this.txtChat.Size = new System.Drawing.Size(427, 26);
             this.txtChat.TabIndex = 0;
             // 
             // pnMainChat
             // 
             this.pnMainChat.AutoScroll = true;
-            this.pnMainChat.Location = new System.Drawing.Point(224, 12);
+            this.pnMainChat.Location = new System.Drawing.Point(124, 13);
             this.pnMainChat.Name = "pnMainChat";
-            this.pnMainChat.Size = new System.Drawing.Size(564, 394);
+            this.pnMainChat.Size = new System.Drawing.Size(664, 390);
             this.pnMainChat.TabIndex = 1;
             // 
             // btnSend
@@ -62,9 +62,9 @@
             // 
             // btnFile
             // 
-            this.btnFile.Location = new System.Drawing.Point(224, 413);
+            this.btnFile.Location = new System.Drawing.Point(124, 409);
             this.btnFile.Name = "btnFile";
-            this.btnFile.Size = new System.Drawing.Size(97, 26);
+            this.btnFile.Size = new System.Drawing.Size(114, 26);
             this.btnFile.TabIndex = 3;
             this.btnFile.Text = "File";
             this.btnFile.UseVisualStyleBackColor = true;

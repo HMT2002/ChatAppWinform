@@ -73,13 +73,31 @@
     <Compile Include="ChatComponent.Designer.cs">
       <DependentUpon>ChatComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChatComponentOther.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChatComponentOther.Designer.cs">
+      <DependentUpon>ChatComponentOther.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChatMessage.cs" />
     <Compile Include="EnumTypeOfMessage.cs" />
+    <Compile Include="FileMessageComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileMessageComponent.Designer.cs">
+      <DependentUpon>FileMessageComponent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageMessageComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageMessageComponent.Designer.cs">
+      <DependentUpon>ImageMessageComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -101,11 +119,32 @@
     <Compile Include="ShowPic.Designer.cs">
       <DependentUpon>ShowPic.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextMessageComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TextMessageComponent.Designer.cs">
+      <DependentUpon>TextMessageComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VideoMessageComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VideoMessageComponent.Designer.cs">
+      <DependentUpon>VideoMessageComponent.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChatComponent.resx">
       <DependentUpon>ChatComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChatComponentOther.resx">
+      <DependentUpon>ChatComponentOther.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileMessageComponent.resx">
+      <DependentUpon>FileMessageComponent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageMessageComponent.resx">
+      <DependentUpon>ImageMessageComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,6 +158,12 @@
     </Compile>
     <EmbeddedResource Include="ShowPic.resx">
       <DependentUpon>ShowPic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextMessageComponent.resx">
+      <DependentUpon>TextMessageComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VideoMessageComponent.resx">
+      <DependentUpon>VideoMessageComponent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -142,6 +187,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\8T65a4KGc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\I4cXsB.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\VideoLAN.LibVLC.Windows.3.0.20\build\VideoLAN.LibVLC.Windows.targets" Condition="Exists('packages\VideoLAN.LibVLC.Windows.3.0.20\build\VideoLAN.LibVLC.Windows.targets')" />
