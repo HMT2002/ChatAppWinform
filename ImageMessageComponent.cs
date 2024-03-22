@@ -28,7 +28,7 @@ namespace ChatApp
         ShowPic show = new ShowPic();
         private void picMessage_Click(object sender, EventArgs e)
         {
-            Image temp = Image.FromFile(@"C:\Users\blues\Pictures\dom.jpg");
+            Image temp = Image.FromFile(this.chatMessage.Text);
             show = new ShowPic(temp, Cursor.Position);
             show.Location = new Point(Cursor.Position.X - 165, Cursor.Position.Y - 210);
             show.WindowState = FormWindowState.Normal;
@@ -39,7 +39,7 @@ namespace ChatApp
         public void initImage()
         {
             picMessage.BringToFront();
-            picMessage.Image = Image.FromFile(@"C:\Users\blues\Pictures\dom.jpg");
+            picMessage.Image = Image.FromFile(this.chatMessage.Text);
         }
 
 

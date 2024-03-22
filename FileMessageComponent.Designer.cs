@@ -60,6 +60,7 @@
             this.Controls.Add(this.picFile);
             this.Name = "FileMessageComponent";
             this.Size = new System.Drawing.Size(350, 90);
+            this.Load += new System.EventHandler(this.FileMessageComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picFile)).EndInit();
             this.ResumeLayout(false);
 

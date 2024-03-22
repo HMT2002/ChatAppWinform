@@ -34,13 +34,12 @@
             // 
             // lblDate
             // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(358, 112);
+            this.lblDate.Location = new System.Drawing.Point(249, 113);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(30, 13);
+            this.lblDate.Size = new System.Drawing.Size(140, 15);
             this.lblDate.TabIndex = 3;
             this.lblDate.Text = "Date";
-            this.lblDate.Visible = false;
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // pnMain
             // 
@@ -59,7 +58,6 @@
             this.Name = "ChatComponent";
             this.Size = new System.Drawing.Size(400, 135);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

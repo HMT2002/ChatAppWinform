@@ -25,7 +25,13 @@ namespace ChatApp
             InitializeComponent();
             this.chatMessage = chatMessage;
             initOnType(chatMessage.TypeOfMessage);
+            initGeneral();
         }
+        public void initGeneral()
+        {
+            lblDate.Text = this.chatMessage.Date.ToString("MM/dd/yyyy hh:mm tt");
+        }
+
         public void initOnType(EnumTypeOfMessage typeOfMessage)
         {
             switch (typeOfMessage)
@@ -45,6 +51,7 @@ namespace ChatApp
                 default: break;
             }
         }
+
 
         public void initText()
         {

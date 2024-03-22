@@ -38,7 +38,7 @@
             this.pcMainShowPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pcMainShowPic.Location = new System.Drawing.Point(0, 0);
             this.pcMainShowPic.Name = "pcMainShowPic";
-            this.pcMainShowPic.Size = new System.Drawing.Size(310, 400);
+            this.pcMainShowPic.Size = new System.Drawing.Size(713, 665);
             this.pcMainShowPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcMainShowPic.TabIndex = 0;
             this.pcMainShowPic.TabStop = false;
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 401);
+            this.ClientSize = new System.Drawing.Size(711, 666);
             this.ControlBox = false;
             this.Controls.Add(this.lblCoor);
             this.Controls.Add(this.pcMainShowPic);

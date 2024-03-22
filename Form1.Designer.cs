@@ -32,6 +32,8 @@
             this.pnMainChat = new System.Windows.Forms.Panel();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnFile = new System.Windows.Forms.Button();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblCal = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtChat
@@ -49,6 +51,7 @@
             this.pnMainChat.Name = "pnMainChat";
             this.pnMainChat.Size = new System.Drawing.Size(664, 390);
             this.pnMainChat.TabIndex = 1;
+            this.pnMainChat.Scroll += new System.Windows.Forms.ScrollEventHandler(this.pnMainChat_Scroll);
             // 
             // btnSend
             // 
@@ -70,11 +73,33 @@
             this.btnFile.UseVisualStyleBackColor = true;
             this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(12, 9);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(35, 13);
+            this.lblLocation.TabIndex = 4;
+            this.lblLocation.Text = "label1";
+            this.lblLocation.Visible = false;
+            // 
+            // lblCal
+            // 
+            this.lblCal.AutoSize = true;
+            this.lblCal.Location = new System.Drawing.Point(14, 38);
+            this.lblCal.Name = "lblCal";
+            this.lblCal.Size = new System.Drawing.Size(35, 13);
+            this.lblCal.TabIndex = 5;
+            this.lblCal.Text = "label1";
+            this.lblCal.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCal);
+            this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.btnFile);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.pnMainChat);
@@ -93,6 +118,8 @@
         private System.Windows.Forms.Panel pnMainChat;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnFile;
+        private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.Label lblCal;
     }
 }
 

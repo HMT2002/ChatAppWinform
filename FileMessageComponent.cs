@@ -22,5 +22,14 @@ namespace ChatApp
             InitializeComponent();
             this.chatMessage = chatMessage;
         }
+
+        private void FileMessageComponent_Load(object sender, EventArgs e)
+        {
+            initFile();
+        }
+        public void initFile()
+        {
+            picFile.BackgroundImage= Icon.ExtractAssociatedIcon(chatMessage.Text).ToBitmap();
+        }
     }
 }

@@ -51,7 +51,7 @@ namespace ChatApp
             _mp.EnableMouseInput = false;
             _mp.EnableKeyInput = false;
 
-            _mp.Play(new Media(_libVLC, "../../fumo.mp4", FromType.FromPath));
+            _mp.Play(new Media(_libVLC, this.chatMessage.Text, FromType.FromPath));
 
 
         }
