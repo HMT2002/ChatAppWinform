@@ -13,24 +13,27 @@ namespace ChatApp
         private string sender;
         private string receiver;
         private EnumTypeOfMessage typeOfMessage;
+        private ChatRoom room;
         public string Text { get => text; set => text = value; }
         public DateTime Date { get => date; set => date = value; }
         public string Sender { get => sender; set => sender = value; }
         public string Receiver { get => receiver; set => receiver = value; }
         public EnumTypeOfMessage TypeOfMessage { get => typeOfMessage; set => typeOfMessage = value; }
+        public ChatRoom Room { get => room; set => room = value; }
 
         public ChatMessage()
         {
 
         }
 
-        public ChatMessage(string text, DateTime date, string sender, string receiver, EnumTypeOfMessage typeOfMessage)
+        public ChatMessage(string text, DateTime date, string sender, string receiver, EnumTypeOfMessage typeOfMessage, ChatRoom room)
         {
             Text = text;
             Date = date;
             Sender = sender;
             Receiver = receiver;
             TypeOfMessage = typeOfMessage;
+            Room = room;
         }
     }
 }

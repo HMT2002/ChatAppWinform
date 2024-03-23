@@ -1,0 +1,140 @@
+[
+    {
+        "Text": "C:\\Users\\blues\\Downloads\\3-Thuộc tính chất lượng.pptx",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "0",
+        "Receiver": "1",
+        "TypeOfMessage": "FILE",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "../../fumo.mp4",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "1",
+        "Receiver": "0",
+        "TypeOfMessage": "VIDEO",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "C:\\Users\\blues\\Pictures\\dom.jpg",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "1",
+        "Receiver": "0",
+        "TypeOfMessage": "IMAGE",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "chào buổi sáng",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "0",
+        "Receiver": "1",
+        "TypeOfMessage": "TEXT",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "chào buổi sáng",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "1",
+        "Receiver": "0",
+        "TypeOfMessage": "TEXT",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "chào buổi sáng",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "0",
+        "Receiver": "1",
+        "TypeOfMessage": "TEXT",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    }
+]

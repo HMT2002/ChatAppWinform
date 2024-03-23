@@ -1,0 +1,18 @@
+[
+    {
+        "users": [
+            {
+                "Id": "0",
+                "Name": "0",
+                "Email": "0"
+            },
+            {
+                "Id": "1",
+                "Name": "1",
+                "Email": "1"
+            }
+        ],
+        "roomName": "abc",
+        "roomId": "123"
+    }
+]
