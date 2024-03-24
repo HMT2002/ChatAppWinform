@@ -199,5 +199,29 @@ namespace ChatApp
             lblLocation.Text = "X: " + pnMainChat.DisplayRectangle.Location.X.ToString() + "; Y: " + pnMainChat.DisplayRectangle.Location.Y.ToString() + "Height: " + pnMainChat.Height + ", glob = " + glob.ToString();
         }
 
+        private void picOpenIcon_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picOpenIcon_Click_1(object sender, EventArgs e)
+        {
+            OpenIcon();
+        }
+        public void OpenIcon()
+        {
+                pnIcon.Visible = !pnIcon.Visible;
+
+            if(pnIcon.Visible)
+            {
+            pnIcon.BringToFront();
+
+            }
+            else
+            {
+                pnIcon.SendToBack();
+            }
+            txtChat.SelectionColor = Color.Red;
+        }
     }
 }

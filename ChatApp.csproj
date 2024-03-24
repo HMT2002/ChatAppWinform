@@ -209,6 +209,45 @@
   <ItemGroup>
     <None Include="Resources\I4cXsB.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FeelsOkayMan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FeelsStrongMan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FeelsWeirdMan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monkaHmm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monkaS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monkaW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monkaW1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PepeLaugh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\POGGERS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sadge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\REEeee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FeelsSpecialMan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\peepoHappy.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\VideoLAN.LibVLC.Windows.3.0.20\build\VideoLAN.LibVLC.Windows.targets" Condition="Exists('packages\VideoLAN.LibVLC.Windows.3.0.20\build\VideoLAN.LibVLC.Windows.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
