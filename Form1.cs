@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -21,9 +22,16 @@ namespace ChatApp
         {
             InitializeComponent();
         }
+        public Form1(ChatUser user)
+        {
+            InitializeComponent();
+            this.currentUser= user;
+        }
         ChatRoom room = new ChatRoom();
         List<ChatMessage> messages = new List<ChatMessage>();
         ChatUser currentUser=new ChatUser() { Name="0",Id="0",Email="0"};
+        ChatUser otherUser = new ChatUser() { Name = "1", Id = "1", Email = "1" };
+
         private void btnSend_Click(object sender, EventArgs e)
         {
             if (txtChat.Text.Trim().CompareTo(string.Empty) == 0)
@@ -116,10 +124,12 @@ namespace ChatApp
             //    new ChatMessage("../../fumo.mp4", DateTime.Now, "", "", EnumTypeOfMessage.VIDEO, room),
             //};
             ReadJSONFileToChatMessage();
+            messages = messages.Where(message => message.Sender.CompareTo(currentUser.Name) == 0|| message.Receiver.CompareTo(currentUser.Name) == 0).OrderByDescending(message=>message.Date).ToList();
+
             for (int i = 0; i < messages.Count; i++)
             {
                 bool mine = false;
-                if (messages[i].Sender.CompareTo(this.currentUser.Id) == 1)
+                if (messages[i].Sender.CompareTo(this.currentUser.Name) == 0)
                 {
                     mine = true;
                 }
@@ -137,12 +147,7 @@ namespace ChatApp
         }
         public void ReadMessageJSONFile()
         {
-            string fileName = "../../messages.json";
-            string jsonString = File.ReadAllText(fileName);
-            var options = new JsonSerializerOptions();
-            options.Converters.Add(new JsonStringEnumConverter());
-            messages = JsonSerializer.Deserialize<List<ChatMessage>>(jsonString, options);
-
+            messages = ChatMessage.GetAll();
             int test = 0;
         }
         public void ReadUserJSONFile()
@@ -159,7 +164,7 @@ namespace ChatApp
 
             string jsonString = JsonSerializer.Serialize(obj);
 
-            MessageBox.Show(jsonString);
+            //MessageBox.Show(jsonString);
         }
 
         public void AddToMessageList(ChatMessage message)

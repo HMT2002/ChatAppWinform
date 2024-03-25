@@ -23,6 +23,75 @@
         }
     },
     {
+        "Text": "C:\\Users\\blues\\Downloads\\3-Thuộc tính chất lượng.pptx",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "0",
+        "Receiver": "1",
+        "TypeOfMessage": "FILE",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "C:\\Users\\blues\\Downloads\\3-Thuộc tính chất lượng.pptx",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "3",
+        "Receiver": "1",
+        "TypeOfMessage": "FILE",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "C:\\Users\\blues\\Downloads\\3-Thuộc tính chất lượng.pptx",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "3",
+        "Receiver": "1",
+        "TypeOfMessage": "FILE",
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
         "Text": "../../fumo.mp4",
         "Date": "2019-08-01T00:00:00-07:00",
         "Sender": "1",
