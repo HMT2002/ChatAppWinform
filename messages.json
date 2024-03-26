@@ -54,9 +54,9 @@
         "Room": {
             "users": [
                 {
-                    "Id": "0",
-                    "Name": "0",
-                    "Email": "0"
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3"
                 },
                 {
                     "Id": "1",
@@ -64,8 +64,8 @@
                     "Email": "1"
                 }
             ],
-            "roomName": "abc",
-            "roomId": "123"
+            "roomName": "def",
+            "roomId": "456"
         }
     },
     {
@@ -77,9 +77,9 @@
         "Room": {
             "users": [
                 {
-                    "Id": "0",
-                    "Name": "0",
-                    "Email": "0"
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3"
                 },
                 {
                     "Id": "1",
@@ -87,8 +87,100 @@
                     "Email": "1"
                 }
             ],
-            "roomName": "abc",
-            "roomId": "123"
+            "roomName": "def",
+            "roomId": "456"
+        }
+    },
+    {
+        "Text": "Khỏe không?",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "1",
+        "Receiver": "3",
+        "TypeOfMessage": "TEXT",
+        "Room": {
+            "users": [
+                {
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "def",
+            "roomId": "456"
+        }
+    },
+    {
+        "Text": "Nay sao rồi",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "3",
+        "Receiver": "1",
+        "TypeOfMessage": "TEXT",
+        "Room": {
+            "users": [
+                {
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "def",
+            "roomId": "456"
+        }
+    },
+    {
+        "Text": "C:\\Users\\blues\\Videos\\東方ヴォーカルPV悪戯センセーションVo-あやぽんず-あよ森羅万象公式.mp4",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "1",
+        "Receiver": "3",
+        "TypeOfMessage": "VIDEO",
+        "Room": {
+            "users": [
+                {
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "def",
+            "roomId": "456"
+        }
+    },
+    {
+        "Text": "C:\\Users\\blues\\Pictures\\1703133038633652.jpg",
+        "Date": "2019-08-01T00:00:00-07:00",
+        "Sender": "1",
+        "Receiver": "3",
+        "TypeOfMessage": "IMAGE",
+        "Room": {
+            "users": [
+                {
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1"
+                }
+            ],
+            "roomName": "def",
+            "roomId": "456"
         }
     },
     {

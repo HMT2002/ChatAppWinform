@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace ChatApp
 {
@@ -18,10 +21,21 @@ namespace ChatApp
         {
             this.users = new List<ChatUser>();
         }
+        
 
-        List<ChatUser> users { get; set; }
+        public List<ChatUser> users { get; set; }
         public string roomName { get; set; }
         public string roomId { get; set; }
 
+        public static List<ChatRoom> GetAll()
+        {
+            var list = new List<ChatRoom>();
+            string fileName = "../../rooms.json";
+            string jsonString = File.ReadAllText(fileName);
+            var options = new JsonSerializerOptions();
+            options.Converters.Add(new JsonStringEnumConverter());
+            list = JsonSerializer.Deserialize<List<ChatRoom>>(jsonString, options);
+            return list;
+        }
     }
 }

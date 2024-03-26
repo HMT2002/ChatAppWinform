@@ -48,5 +48,11 @@ namespace ChatApp
             messages = JsonSerializer.Deserialize<List<ChatMessage>>(jsonString, options);
             return messages;
         }
+        public static void WriteAll(List<ChatMessage> list)
+        {
+            string jsonString = JsonSerializer.Serialize(list);
+            File.WriteAllText("../../messages.json", jsonString);
+
+        }
     }
 }

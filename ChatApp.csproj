@@ -110,6 +110,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FullScreenVideo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FullScreenVideo.Designer.cs">
+      <DependentUpon>FullScreenVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="IconHelper.cs" />
     <Compile Include="ImageMessageComponent.cs">
       <SubType>UserControl</SubType>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FullScreenVideo.resx">
+      <DependentUpon>FullScreenVideo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageMessageComponent.resx">
       <DependentUpon>ImageMessageComponent.cs</DependentUpon>
@@ -250,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\peepoHappy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullscreen-icon-expand-to-full-screen-vector-30678673.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\VideoLAN.LibVLC.Windows.3.0.20\build\VideoLAN.LibVLC.Windows.targets" Condition="Exists('packages\VideoLAN.LibVLC.Windows.3.0.20\build\VideoLAN.LibVLC.Windows.targets')" />

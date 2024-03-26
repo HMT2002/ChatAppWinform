@@ -133,6 +133,16 @@ namespace ChatApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fullscreen_icon_expand_to_full_screen_vector_30678673 {
+            get {
+                object obj = ResourceManager.GetObject("fullscreen-icon-expand-to-full-screen-vector-30678673", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap I4cXsB {
             get {
                 object obj = ResourceManager.GetObject("I4cXsB", resourceCulture);

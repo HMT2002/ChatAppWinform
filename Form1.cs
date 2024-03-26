@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Text.Json;
@@ -25,12 +26,13 @@ namespace ChatApp
         public Form1(ChatUser user)
         {
             InitializeComponent();
-            this.currentUser= user;
+            this.currentUser = user;
         }
         ChatRoom room = new ChatRoom();
         List<ChatMessage> messages = new List<ChatMessage>();
-        ChatUser currentUser=new ChatUser() { Name="0",Id="0",Email="0"};
-        ChatUser otherUser = new ChatUser() { Name = "1", Id = "1", Email = "1" };
+        ChatUser currentUser = new ChatUser() { Name = "0", Id = "0", Email = "0" };
+        ChatRoom currentRoom = new ChatRoom();
+        List<ChatRoom> roomList = new List<ChatRoom>();
 
         private void btnSend_Click(object sender, EventArgs e)
         {
@@ -45,7 +47,7 @@ namespace ChatApp
                 Receiver = "",
                 Sender = "",
                 TypeOfMessage = EnumTypeOfMessage.TEXT
-            }; 
+            };
             AddToMessageList(message);
 
             txtChat.Text = "";
@@ -107,7 +109,26 @@ namespace ChatApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LoadListRoom();
             LoadMessage();
+        }
+        public void LoadListRoom()
+        {
+            roomList = ChatRoom.GetAll().Where(room => room.users.Any(user => user.Id.CompareTo(this.currentUser.Id) == 0)).ToList();
+            foreach (ChatRoom room in roomList)
+            {
+                lstvwRoom.Items.Add(room.roomName);
+            }
+            currentRoom = roomList[0];
+        }
+        public void ClearMessages()
+        {
+            foreach(Control control in pnMainChat.Controls)
+            {
+                control.Dispose();
+            }
+            pnMainChat.Controls.Clear();
+            messages.Clear();
         }
         public void LoadMessage()
         {
@@ -123,8 +144,9 @@ namespace ChatApp
             //    new ChatMessage(@"C:\Users\blues\Downloads\3-Thuộc tính chất lượng.pptx", DateTime.Now, "", "", EnumTypeOfMessage.FILE, room),
             //    new ChatMessage("../../fumo.mp4", DateTime.Now, "", "", EnumTypeOfMessage.VIDEO, room),
             //};
+            ClearMessages();
             ReadJSONFileToChatMessage();
-            messages = messages.Where(message => message.Sender.CompareTo(currentUser.Name) == 0|| message.Receiver.CompareTo(currentUser.Name) == 0).OrderByDescending(message=>message.Date).ToList();
+            messages = messages.Where(message => message.Room.roomId.CompareTo(currentRoom.roomId) == 0).OrderByDescending(message => message.Date).ToList();
 
             for (int i = 0; i < messages.Count; i++)
             {
@@ -215,11 +237,11 @@ namespace ChatApp
         }
         public void OpenIcon()
         {
-                pnIcon.Visible = !pnIcon.Visible;
+            pnIcon.Visible = !pnIcon.Visible;
 
-            if(pnIcon.Visible)
+            if (pnIcon.Visible)
             {
-            pnIcon.BringToFront();
+                pnIcon.BringToFront();
 
             }
             else
@@ -227,6 +249,20 @@ namespace ChatApp
                 pnIcon.SendToBack();
             }
             txtChat.SelectionColor = Color.Red;
+        }
+
+        private void lstvwRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstvwRoom.SelectedItems.Count > 0)
+            {
+                int index = lstvwRoom.Items.IndexOf(lstvwRoom.SelectedItems[0]);
+                ChatRoom room = roomList[index];
+                if (room != null)
+                {
+                    currentRoom = room;
+                    LoadMessage();
+                }
+            }
         }
     }
 }

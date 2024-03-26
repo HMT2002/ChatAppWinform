@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Text;
@@ -23,6 +24,7 @@ namespace ChatApp
         {
             InitializeComponent();
             this.chatMessage = chatMessage;
+
         }
         private void VideoMessageComponent_Load(object sender, EventArgs e)
         {
@@ -40,6 +42,7 @@ namespace ChatApp
         public const int defaultVolume = 70;
         public LibVLC _libVLC;
         public MediaPlayer _mp;
+        public Media media;
         public void initPlayer()
         {
             first_init = false;
@@ -50,15 +53,38 @@ namespace ChatApp
             CheckForIllegalCrossThreadCalls = false;
             _mp.EnableMouseInput = false;
             _mp.EnableKeyInput = false;
+            media = new Media(_libVLC, this.chatMessage.Text, FromType.FromPath);
+            _mp.Play(media);
+            if (File.Exists(this.chatMessage.Text.Replace(".mp4", ".ass")))
+            {
+                _mp.AddSlave(MediaSlaveType.Subtitle, "file:///" + this.chatMessage.Text.Replace(".mp4", ".ass"), true);
 
-            _mp.Play(new Media(_libVLC, this.chatMessage.Text, FromType.FromPath));
+            }
+            else if (File.Exists(this.chatMessage.Text.Replace(".mp4", ".srt")))
+            {
+
+                _mp.AddSlave(MediaSlaveType.Subtitle, "file:///" + this.chatMessage.Text.Replace(".mp4", ".srt"), true);
 
 
+            }
+
+
+
+            this.Disposed += delegate
+            {
+
+                media.Dispose();
+                _mp.Dispose();
+                _libVLC.Dispose();
+            };
         }
         public void player_play()
         {
+
             try
             {
+                picPlay.Visible = !picPlay.Visible;
+
                 _mp.Play();
             }
             catch (Exception ex)
@@ -70,6 +96,8 @@ namespace ChatApp
         {
             try
             {
+                picPlay.Visible = !picPlay.Visible;
+
                 _mp.Pause();
             }
             catch (Exception ex)
@@ -91,21 +119,11 @@ namespace ChatApp
         int count = 0;
         private void videoMessage_Click(object sender, EventArgs e)
         {
-            picPlay.Visible = !picPlay.Visible;
 
             if (first_init)
             {
-                initPlayer();
-                return;
-            }
-            player_pause();
-        }
-        private void pcbxPlay_Click_1(object sender, EventArgs e)
-        {
-            picPlay.Visible = !picPlay.Visible;
+                picPlay.Visible = !picPlay.Visible;
 
-            if (first_init)
-            {
                 initPlayer();
                 return;
             }
@@ -113,15 +131,31 @@ namespace ChatApp
         }
         private void picPlay_Click(object sender, EventArgs e)
         {
-            picPlay.Visible = !picPlay.Visible;
 
             if (first_init)
             {
+                picPlay.Visible = !picPlay.Visible;
+
                 initPlayer();
                 return;
             }
             player_pause();
         }
         #endregion
+
+        private void btnFullScreen_Click(object sender, EventArgs e)
+        {
+            float currentPosition = _mp.Position;
+            Media med = _mp.Media;
+            FullScreenVideo form = new FullScreenVideo(currentPosition, med);
+            player_pause();
+
+            form.ShowDialog();
+            if (form.isClosed)
+            {
+                _mp.Position = form.currentPos;
+                player_play();
+            }
+        }
     }
 }

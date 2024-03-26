@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.videoMessage = new LibVLCSharp.WinForms.VideoView();
+            this.btnFullScreen = new System.Windows.Forms.Button();
             this.picPlay = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.videoMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlay)).BeginInit();
@@ -44,6 +45,17 @@
             this.videoMessage.TabIndex = 1;
             this.videoMessage.Text = "videoView1";
             this.videoMessage.Click += new System.EventHandler(this.videoMessage_Click);
+            // 
+            // btnFullScreen
+            // 
+            this.btnFullScreen.BackgroundImage = global::ChatApp.Properties.Resources.fullscreen_icon_expand_to_full_screen_vector_30678673;
+            this.btnFullScreen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnFullScreen.Location = new System.Drawing.Point(310, 59);
+            this.btnFullScreen.Name = "btnFullScreen";
+            this.btnFullScreen.Size = new System.Drawing.Size(24, 21);
+            this.btnFullScreen.TabIndex = 6;
+            this.btnFullScreen.UseVisualStyleBackColor = true;
+            this.btnFullScreen.Click += new System.EventHandler(this.btnFullScreen_Click);
             // 
             // picPlay
             // 
@@ -61,6 +73,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnFullScreen);
             this.Controls.Add(this.picPlay);
             this.Controls.Add(this.videoMessage);
             this.Name = "VideoMessageComponent";
@@ -76,5 +89,6 @@
 
         private LibVLCSharp.WinForms.VideoView videoMessage;
         private System.Windows.Forms.PictureBox picPlay;
+        private System.Windows.Forms.Button btnFullScreen;
     }
 }
