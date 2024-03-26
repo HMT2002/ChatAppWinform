@@ -46,6 +46,7 @@ namespace ChatApp
             var options = new JsonSerializerOptions();
             options.Converters.Add(new JsonStringEnumConverter());
             messages = JsonSerializer.Deserialize<List<ChatMessage>>(jsonString, options);
+            AllMessages = messages;
             return messages;
         }
         public static void WriteAll(List<ChatMessage> list)
@@ -54,5 +55,6 @@ namespace ChatApp
             File.WriteAllText("../../messages.json", jsonString);
 
         }
+        public static List<ChatMessage> AllMessages=new List<ChatMessage>();
     }
 }

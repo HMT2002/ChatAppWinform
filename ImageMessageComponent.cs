@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibVLCSharp.Shared;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,5 +46,15 @@ namespace ChatApp
 
 
         #endregion
+
+        private void ImageMessageComponent_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void OnDispose(object sender, EventArgs e)
+        {
+            MessageBox.Show("Image dispose");
+        }
+
     }
 }

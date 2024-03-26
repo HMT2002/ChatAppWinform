@@ -19,16 +19,18 @@ namespace ChatApp
             InitializeComponent();
         }
 
-        public FullScreenVideo(float currentPosition, Media med)
+        public FullScreenVideo(float currentPosition, Media med,LibVLC lib)
         {
             InitializeComponent();
+            //CheckForIllegalCrossThreadCalls = false;
+
             media = med;
             currentPos = currentPosition;
-            _libVLC = new LibVLC("--input-repeat=100");
+
+            _libVLC = lib;
             _mp = new MediaPlayer(_libVLC);
             videoFull.MediaPlayer = _mp;
             _mp.Volume = 70;
-            CheckForIllegalCrossThreadCalls = false;
             _mp.EnableMouseInput = false;
             _mp.EnableKeyInput = false;
             _mp.Play(this.media);
@@ -48,6 +50,7 @@ namespace ChatApp
             media.Dispose();
             _mp.Dispose();
             _libVLC.Dispose();
+            videoFull.Dispose();
         }
 
         private void FullScreenVideo_FormClosing(object sender, FormClosingEventArgs e)

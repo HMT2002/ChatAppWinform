@@ -51,6 +51,7 @@
             this.Controls.Add(this.picMessage);
             this.Name = "ImageMessageComponent";
             this.Size = new System.Drawing.Size(350, 90);
+            this.Load += new System.EventHandler(this.ImageMessageComponent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picMessage)).EndInit();
             this.ResumeLayout(false);
 

@@ -64,6 +64,6 @@
 
         #endregion
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Panel pnMain;
+        public System.Windows.Forms.Panel pnMain;
     }
 }

@@ -26,8 +26,36 @@ namespace ChatApp
             this.chatMessage = chatMessage;
 
         }
+        private void OnDispose(object sender, EventArgs e)
+        {
+            if (_mp != null)
+            {
+                _mp.Stop();
+                _mp.Dispose();
+                _mp = null;
+            }
+            if (videoMessage != null)
+            {
+                videoMessage.Dispose();
+                videoMessage = null;
+
+            }
+            if (media != null)
+            {
+                media.Dispose();
+                media = null;
+            }
+
+            if (_libVLC != null)
+            {
+                _libVLC.Dispose();
+                _libVLC = null;
+            }
+        }
         private void VideoMessageComponent_Load(object sender, EventArgs e)
         {
+            this.Disposed += OnDispose;            
+
             initVideo();
         }
         public void initVideo()
@@ -46,15 +74,18 @@ namespace ChatApp
         public void initPlayer()
         {
             first_init = false;
-            _libVLC = new LibVLC("--input-repeat=100");
+            _libVLC = new LibVLC("--input-repeat=100--reset-plugins-cache");
+            media = new Media(_libVLC, this.chatMessage.Text, FromType.FromPath);
+
             _mp = new MediaPlayer(_libVLC);
+
             videoMessage.MediaPlayer = _mp;
+            _mp.Play(media);
+
             _mp.Volume = defaultVolume;
-            CheckForIllegalCrossThreadCalls = false;
+            //CheckForIllegalCrossThreadCalls = false;
             _mp.EnableMouseInput = false;
             _mp.EnableKeyInput = false;
-            media = new Media(_libVLC, this.chatMessage.Text, FromType.FromPath);
-            _mp.Play(media);
             if (File.Exists(this.chatMessage.Text.Replace(".mp4", ".ass")))
             {
                 _mp.AddSlave(MediaSlaveType.Subtitle, "file:///" + this.chatMessage.Text.Replace(".mp4", ".ass"), true);
@@ -68,15 +99,6 @@ namespace ChatApp
 
             }
 
-
-
-            this.Disposed += delegate
-            {
-
-                media.Dispose();
-                _mp.Dispose();
-                _libVLC.Dispose();
-            };
         }
         public void player_play()
         {
@@ -145,9 +167,14 @@ namespace ChatApp
 
         private void btnFullScreen_Click(object sender, EventArgs e)
         {
+            if (_mp == null)
+            {
+                return;
+            }
             float currentPosition = _mp.Position;
+            
             Media med = _mp.Media;
-            FullScreenVideo form = new FullScreenVideo(currentPosition, med);
+            FullScreenVideo form = new FullScreenVideo(currentPosition, med,_libVLC);
             player_pause();
 
             form.ShowDialog();
@@ -156,6 +183,11 @@ namespace ChatApp
                 _mp.Position = form.currentPos;
                 player_play();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OnDispose(null, null);
         }
     }
 }

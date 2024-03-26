@@ -21,6 +21,7 @@ namespace ChatApp
         {
             InitializeComponent();
             this.chatMessage = chatMessage;
+
             initOnType(chatMessage.TypeOfMessage);
             initGeneral();
         }
@@ -50,7 +51,16 @@ namespace ChatApp
 
         private void ChatComponentOther_Load(object sender, EventArgs e)
         {
+            this.Disposed += delegate
+            {
+                foreach (Control control in pnMain.Controls)
+                {
 
+                        control.Dispose();
+                    
+                }
+
+            };
         }
         public void initFile()
         {

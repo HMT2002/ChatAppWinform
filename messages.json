@@ -1,21 +1,23 @@
 [
     {
-        "Text": "C:\\Users\\blues\\Downloads\\3-Thuộc tính chất lượng.pptx",
-        "Date": "2019-08-01T00:00:00-07:00",
+        "Text": "C:\\Users\\blues\\Downloads\\3-Thu\u1ED9c t\u00EDnh ch\u1EA5t l\u01B0\u1EE3ng.pptx",
+        "Date": "2019-08-01T14:00:00+07:00",
         "Sender": "0",
         "Receiver": "1",
-        "TypeOfMessage": "FILE",
+        "TypeOfMessage": 3,
         "Room": {
             "users": [
                 {
                     "Id": "0",
                     "Name": "0",
-                    "Email": "0"
+                    "Email": "0",
+                    "Password": null
                 },
                 {
                     "Id": "1",
                     "Name": "1",
-                    "Email": "1"
+                    "Email": "1",
+                    "Password": null
                 }
             ],
             "roomName": "abc",
@@ -23,183 +25,49 @@
         }
     },
     {
-        "Text": "C:\\Users\\blues\\Downloads\\3-Thuộc tính chất lượng.pptx",
-        "Date": "2019-08-01T00:00:00-07:00",
+        "Text": "C:\\Users\\blues\\Downloads\\3-Thu\u1ED9c t\u00EDnh ch\u1EA5t l\u01B0\u1EE3ng.pptx",
+        "Date": "2019-08-01T14:00:00+07:00",
         "Sender": "0",
         "Receiver": "1",
-        "TypeOfMessage": "FILE",
+        "TypeOfMessage": 3,
         "Room": {
             "users": [
                 {
                     "Id": "0",
                     "Name": "0",
-                    "Email": "0"
+                    "Email": "0",
+                    "Password": null
                 },
                 {
                     "Id": "1",
                     "Name": "1",
-                    "Email": "1"
+                    "Email": "1",
+                    "Password": null
                 }
             ],
             "roomName": "abc",
             "roomId": "123"
-        }
-    },
-    {
-        "Text": "C:\\Users\\blues\\Downloads\\3-Thuộc tính chất lượng.pptx",
-        "Date": "2019-08-01T00:00:00-07:00",
-        "Sender": "3",
-        "Receiver": "1",
-        "TypeOfMessage": "FILE",
-        "Room": {
-            "users": [
-                {
-                    "Id": "3",
-                    "Name": "3",
-                    "Email": "3"
-                },
-                {
-                    "Id": "1",
-                    "Name": "1",
-                    "Email": "1"
-                }
-            ],
-            "roomName": "def",
-            "roomId": "456"
-        }
-    },
-    {
-        "Text": "C:\\Users\\blues\\Downloads\\3-Thuộc tính chất lượng.pptx",
-        "Date": "2019-08-01T00:00:00-07:00",
-        "Sender": "3",
-        "Receiver": "1",
-        "TypeOfMessage": "FILE",
-        "Room": {
-            "users": [
-                {
-                    "Id": "3",
-                    "Name": "3",
-                    "Email": "3"
-                },
-                {
-                    "Id": "1",
-                    "Name": "1",
-                    "Email": "1"
-                }
-            ],
-            "roomName": "def",
-            "roomId": "456"
-        }
-    },
-    {
-        "Text": "Khỏe không?",
-        "Date": "2019-08-01T00:00:00-07:00",
-        "Sender": "1",
-        "Receiver": "3",
-        "TypeOfMessage": "TEXT",
-        "Room": {
-            "users": [
-                {
-                    "Id": "3",
-                    "Name": "3",
-                    "Email": "3"
-                },
-                {
-                    "Id": "1",
-                    "Name": "1",
-                    "Email": "1"
-                }
-            ],
-            "roomName": "def",
-            "roomId": "456"
-        }
-    },
-    {
-        "Text": "Nay sao rồi",
-        "Date": "2019-08-01T00:00:00-07:00",
-        "Sender": "3",
-        "Receiver": "1",
-        "TypeOfMessage": "TEXT",
-        "Room": {
-            "users": [
-                {
-                    "Id": "3",
-                    "Name": "3",
-                    "Email": "3"
-                },
-                {
-                    "Id": "1",
-                    "Name": "1",
-                    "Email": "1"
-                }
-            ],
-            "roomName": "def",
-            "roomId": "456"
-        }
-    },
-    {
-        "Text": "C:\\Users\\blues\\Videos\\東方ヴォーカルPV悪戯センセーションVo-あやぽんず-あよ森羅万象公式.mp4",
-        "Date": "2019-08-01T00:00:00-07:00",
-        "Sender": "1",
-        "Receiver": "3",
-        "TypeOfMessage": "VIDEO",
-        "Room": {
-            "users": [
-                {
-                    "Id": "3",
-                    "Name": "3",
-                    "Email": "3"
-                },
-                {
-                    "Id": "1",
-                    "Name": "1",
-                    "Email": "1"
-                }
-            ],
-            "roomName": "def",
-            "roomId": "456"
-        }
-    },
-    {
-        "Text": "C:\\Users\\blues\\Pictures\\1703133038633652.jpg",
-        "Date": "2019-08-01T00:00:00-07:00",
-        "Sender": "1",
-        "Receiver": "3",
-        "TypeOfMessage": "IMAGE",
-        "Room": {
-            "users": [
-                {
-                    "Id": "3",
-                    "Name": "3",
-                    "Email": "3"
-                },
-                {
-                    "Id": "1",
-                    "Name": "1",
-                    "Email": "1"
-                }
-            ],
-            "roomName": "def",
-            "roomId": "456"
         }
     },
     {
         "Text": "../../fumo.mp4",
-        "Date": "2019-08-01T00:00:00-07:00",
+        "Date": "2019-08-01T14:00:00+07:00",
         "Sender": "1",
         "Receiver": "0",
-        "TypeOfMessage": "VIDEO",
+        "TypeOfMessage": 2,
         "Room": {
             "users": [
                 {
                     "Id": "0",
                     "Name": "0",
-                    "Email": "0"
+                    "Email": "0",
+                    "Password": "0"
                 },
                 {
                     "Id": "1",
                     "Name": "1",
-                    "Email": "1"
+                    "Email": "1",
+                    "Password": "0"
                 }
             ],
             "roomName": "abc",
@@ -208,21 +76,23 @@
     },
     {
         "Text": "C:\\Users\\blues\\Pictures\\dom.jpg",
-        "Date": "2019-08-01T00:00:00-07:00",
+        "Date": "2019-08-01T14:00:00+07:00",
         "Sender": "1",
         "Receiver": "0",
-        "TypeOfMessage": "IMAGE",
+        "TypeOfMessage": 1,
         "Room": {
             "users": [
                 {
                     "Id": "0",
                     "Name": "0",
-                    "Email": "0"
+                    "Email": "0",
+                    "Password": null
                 },
                 {
                     "Id": "1",
                     "Name": "1",
-                    "Email": "1"
+                    "Email": "1",
+                    "Password": null
                 }
             ],
             "roomName": "abc",
@@ -230,22 +100,24 @@
         }
     },
     {
-        "Text": "chào buổi sáng",
-        "Date": "2019-08-01T00:00:00-07:00",
+        "Text": "ch\u00E0o bu\u1ED5i s\u00E1ng",
+        "Date": "2019-08-01T14:00:00+07:00",
         "Sender": "0",
         "Receiver": "1",
-        "TypeOfMessage": "TEXT",
+        "TypeOfMessage": 0,
         "Room": {
             "users": [
                 {
                     "Id": "0",
                     "Name": "0",
-                    "Email": "0"
+                    "Email": "0",
+                    "Password": null
                 },
                 {
                     "Id": "1",
                     "Name": "1",
-                    "Email": "1"
+                    "Email": "1",
+                    "Password": null
                 }
             ],
             "roomName": "abc",
@@ -253,22 +125,24 @@
         }
     },
     {
-        "Text": "chào buổi sáng",
-        "Date": "2019-08-01T00:00:00-07:00",
+        "Text": "ch\u00E0o bu\u1ED5i s\u00E1ng",
+        "Date": "2019-08-01T14:00:00+07:00",
         "Sender": "1",
         "Receiver": "0",
-        "TypeOfMessage": "TEXT",
+        "TypeOfMessage": 0,
         "Room": {
             "users": [
                 {
                     "Id": "0",
                     "Name": "0",
-                    "Email": "0"
+                    "Email": "0",
+                    "Password": null
                 },
                 {
                     "Id": "1",
                     "Name": "1",
-                    "Email": "1"
+                    "Email": "1",
+                    "Password": null
                 }
             ],
             "roomName": "abc",
@@ -276,22 +150,224 @@
         }
     },
     {
-        "Text": "chào buổi sáng",
-        "Date": "2019-08-01T00:00:00-07:00",
+        "Text": "ch\u00E0o bu\u1ED5i s\u00E1ng",
+        "Date": "2019-08-01T14:00:00+07:00",
         "Sender": "0",
         "Receiver": "1",
-        "TypeOfMessage": "TEXT",
+        "TypeOfMessage": 0,
         "Room": {
             "users": [
                 {
                     "Id": "0",
                     "Name": "0",
-                    "Email": "0"
+                    "Email": "0",
+                    "Password": null
                 },
                 {
                     "Id": "1",
                     "Name": "1",
-                    "Email": "1"
+                    "Email": "1",
+                    "Password": null
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "d\u1EA1o n\u00E0y kh\u1ECFe kh\u00F4ng?",
+        "Date": "2024-03-26T15:54:44.2020537+07:00",
+        "Sender": "1",
+        "Receiver": "0",
+        "TypeOfMessage": 0,
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0",
+                    "Password": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1",
+                    "Password": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "d\u1EA1o n\u00E0y nh\u01B0 n\u00E0o?",
+        "Date": "2024-03-26T15:55:19.130037+07:00",
+        "Sender": "1",
+        "Receiver": "0",
+        "TypeOfMessage": 0,
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0",
+                    "Password": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1",
+                    "Password": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "d\u1EA1o n\u00E0y kh\u1ECFe kh\u00F4ng?",
+        "Date": "2024-03-26T15:56:13.6819448+07:00",
+        "Sender": "0",
+        "Receiver": "1",
+        "TypeOfMessage": 0,
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0",
+                    "Password": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1",
+                    "Password": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "vui v\u1EBB",
+        "Date": "2024-03-26T15:59:35.5697187+07:00",
+        "Sender": "1",
+        "Receiver": "0",
+        "TypeOfMessage": 0,
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0",
+                    "Password": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1",
+                    "Password": "1"
+                }
+            ],
+            "roomName": "abc",
+            "roomId": "123"
+        }
+    },
+    {
+        "Text": "C:\\Users\\blues\\Pictures\\1187093.jpg",
+        "Date": "2024-03-26T15:59:39.1729073+07:00",
+        "Sender": "1",
+        "Receiver": "3",
+        "TypeOfMessage": 1,
+        "Room": {
+            "users": [
+                {
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3",
+                    "Password": "3"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1",
+                    "Password": "1"
+                }
+            ],
+            "roomName": "def",
+            "roomId": "456"
+        }
+    },
+    {
+        "Text": "../../36.mp4",
+        "Date": "2024-03-26T16:53:53.5079885+07:00",
+        "Sender": "1",
+        "Receiver": "3",
+        "TypeOfMessage": 2,
+        "Room": {
+            "users": [
+                {
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3",
+                    "Password": "3"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1",
+                    "Password": "1"
+                }
+            ],
+            "roomName": "def",
+            "roomId": "456"
+        }
+    },
+    {
+        "Text": "../../[VnSharing]SS-LR.mp4",
+        "Date": "2024-03-26T16:53:53.5079885+07:00",
+        "Sender": "1",
+        "Receiver": "3",
+        "TypeOfMessage": 2,
+        "Room": {
+            "users": [
+                {
+                    "Id": "3",
+                    "Name": "3",
+                    "Email": "3",
+                    "Password": "3"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1",
+                    "Password": "1"
+                }
+            ],
+            "roomName": "def",
+            "roomId": "456"
+        }
+    },
+    {
+        "Text": "../../42.mp4",
+        "Date": "2024-03-26T16:54:30.3416709+07:00",
+        "Sender": "1",
+        "Receiver": "0",
+        "TypeOfMessage": 2,
+        "Room": {
+            "users": [
+                {
+                    "Id": "0",
+                    "Name": "0",
+                    "Email": "0",
+                    "Password": "0"
+                },
+                {
+                    "Id": "1",
+                    "Name": "1",
+                    "Email": "1",
+                    "Password": "1"
                 }
             ],
             "roomName": "abc",

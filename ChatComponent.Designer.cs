@@ -57,12 +57,13 @@
             this.Controls.Add(this.lblDate);
             this.Name = "ChatComponent";
             this.Size = new System.Drawing.Size(400, 135);
+            this.Load += new System.EventHandler(this.ChatComponent_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Panel pnMain;
+        public System.Windows.Forms.Panel pnMain;
     }
 }

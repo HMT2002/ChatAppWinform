@@ -49,6 +49,7 @@
             this.picOpenIcon = new System.Windows.Forms.PictureBox();
             this.txtChat = new System.Windows.Forms.RichTextBox();
             this.lstvwRoom = new System.Windows.Forms.ListView();
+            this.rchtxtDebug = new System.Windows.Forms.RichTextBox();
             this.pnIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -285,11 +286,20 @@
             this.lstvwRoom.View = System.Windows.Forms.View.List;
             this.lstvwRoom.SelectedIndexChanged += new System.EventHandler(this.lstvwRoom_SelectedIndexChanged);
             // 
+            // rchtxtDebug
+            // 
+            this.rchtxtDebug.Location = new System.Drawing.Point(7, 116);
+            this.rchtxtDebug.Name = "rchtxtDebug";
+            this.rchtxtDebug.Size = new System.Drawing.Size(100, 96);
+            this.rchtxtDebug.TabIndex = 10;
+            this.rchtxtDebug.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rchtxtDebug);
             this.Controls.Add(this.lstvwRoom);
             this.Controls.Add(this.picOpenIcon);
             this.Controls.Add(this.txtChat);
@@ -343,6 +353,7 @@
         private System.Windows.Forms.PictureBox picOpenIcon;
         private System.Windows.Forms.RichTextBox txtChat;
         private System.Windows.Forms.ListView lstvwRoom;
+        private System.Windows.Forms.RichTextBox rchtxtDebug;
     }
 }
 
