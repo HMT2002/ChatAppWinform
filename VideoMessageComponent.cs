@@ -28,6 +28,7 @@ namespace ChatApp
         }
         private void OnDispose(object sender, EventArgs e)
         {
+
             if (_mp != null)
             {
                 _mp.Stop();
@@ -46,11 +47,13 @@ namespace ChatApp
                 media = null;
             }
 
-            if (_libVLC != null)
-            {
-                _libVLC.Dispose();
-                _libVLC = null;
-            }
+            //if (_libVLC != null)
+            //{
+            //    _libVLC.Dispose();
+            //    _libVLC = null;
+            //}
+
+
         }
         private void VideoMessageComponent_Load(object sender, EventArgs e)
         {
@@ -68,13 +71,12 @@ namespace ChatApp
         #region player
         public bool first_init = true;
         public const int defaultVolume = 70;
-        public LibVLC _libVLC;
+        public static LibVLC _libVLC =new LibVLC("--input-repeat=100--reset-plugins-cache");
         public MediaPlayer _mp;
         public Media media;
         public void initPlayer()
         {
             first_init = false;
-            _libVLC = new LibVLC("--input-repeat=100--reset-plugins-cache");
             media = new Media(_libVLC, this.chatMessage.Text, FromType.FromPath);
 
             _mp = new MediaPlayer(_libVLC);
@@ -174,7 +176,7 @@ namespace ChatApp
             float currentPosition = _mp.Position;
             
             Media med = _mp.Media;
-            FullScreenVideo form = new FullScreenVideo(currentPosition, med,_libVLC);
+            FullScreenVideo form = new FullScreenVideo(currentPosition, med);
             player_pause();
 
             form.ShowDialog();

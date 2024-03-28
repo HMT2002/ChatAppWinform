@@ -35,7 +35,15 @@ namespace ChatApp
             var options = new JsonSerializerOptions();
             options.Converters.Add(new JsonStringEnumConverter());
             list = JsonSerializer.Deserialize<List<ChatRoom>>(jsonString, options);
+            AllRooms = list;
             return list;
         }
+        public static void WriteAll(List<ChatRoom> list)
+        {
+            string jsonString = JsonSerializer.Serialize(list);
+            File.WriteAllText("../../rooms.json", jsonString);
+
+        }
+        public static List<ChatRoom> AllRooms = new List<ChatRoom>();
     }
 }

@@ -31,7 +31,6 @@
             this.videoMessage = new LibVLCSharp.WinForms.VideoView();
             this.btnFullScreen = new System.Windows.Forms.Button();
             this.picPlay = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.videoMessage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlay)).BeginInit();
             this.SuspendLayout();
@@ -70,21 +69,10 @@
             this.picPlay.TabStop = false;
             this.picPlay.Click += new System.EventHandler(this.picPlay_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(25, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "dis";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // VideoMessageComponent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnFullScreen);
             this.Controls.Add(this.picPlay);
             this.Controls.Add(this.videoMessage);
@@ -102,6 +90,5 @@
         private LibVLCSharp.WinForms.VideoView videoMessage;
         private System.Windows.Forms.PictureBox picPlay;
         private System.Windows.Forms.Button btnFullScreen;
-        private System.Windows.Forms.Button button1;
     }
 }

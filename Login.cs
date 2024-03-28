@@ -77,10 +77,16 @@ namespace ChatApp
             {
                 if (password.CompareTo(user.Password) == 0)
                 {
-                    this.Hide();
                     Form1 form = new Form1(user);
-                    form.Show();
-                    form.Closed += (s, args) => this.Close();
+                    this.Hide();
+
+                    //form.Show();
+                    //form.Closed += (s, args) => this.Close();
+
+                    form.ShowDialog();
+                    this.Show();
+
+                    clear();
                     return;
                 }
 
@@ -90,7 +96,52 @@ namespace ChatApp
         }
         public void RegisterFunc(string username, string password, string repassword)
         {
+            if (password.CompareTo(repassword) != 0)
+            {
+                lblNoti.Text = "Mật khẩu không trùng khớp, xin nhập lại";
+                return;
+            }
+            try
+            {
+                ChatUser test = ChatUser.GetAll().Where(x => x.Name.CompareTo(username.Trim()) == 0).FirstOrDefault();
+                if (test != null)
+                {
+                    lblNoti.Text = "Đã tồn tại người có tài khoản này, xin nhập lại tên khác";
+                    return;
+                }
+                ChatUser newChatUser = new ChatUser() { Name = username, Email = username, Password = password, Id = (ChatUser.AllUsers.Count).ToString() };
+                ChatUser.AllUsers.Add(newChatUser);
+                ChatUser.WriteAll(ChatUser.AllUsers);
 
+
+                Form1 form = new Form1(newChatUser);
+                this.Hide();
+
+                //form.Show();
+                //form.Closed += (s, args) => this.Close();
+
+                form.ShowDialog();
+                this.Show();
+
+
+            }
+            catch { }
+
+        }
+
+        private void checkShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkShowPassword.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+                txtRePassword.PasswordChar = '\0';
+
+            }
+            else
+            {
+                txtPassword.PasswordChar = '•';
+                txtRePassword.PasswordChar= '•';
+            }
         }
     }
 }

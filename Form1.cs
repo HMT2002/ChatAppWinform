@@ -1,7 +1,9 @@
-﻿using System;
+﻿using LibVLCSharp.Shared;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -35,6 +37,7 @@ namespace ChatApp
         List<ChatMessage> messages = new List<ChatMessage>();
         ChatUser currentUser = new ChatUser() { Name = "0", Id = "0", Email = "0" };
         ChatUser otherUser = new ChatUser();
+        List<ChatUser> otherUsers = new List<ChatUser>();
 
         ChatRoom currentRoom = new ChatRoom();
         List<ChatRoom> roomList = new List<ChatRoom>();
@@ -105,29 +108,51 @@ namespace ChatApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            SwitchMode(AppMode.CurMODE);
             LoadListRoom();
             LoadMessage();
+            LoadOtherUser();
+        }
+        public void LoadOtherUser()
+        {
+            otherUsers = ChatUser.GetAll().Where(user => user.Id != currentUser.Id).ToList();
+            if (otherUsers.Count == 0)
+            {
+                return;
+            }
+            lstvwOtherUser.Items.Clear();
+            foreach (ChatUser user in otherUsers)
+            {
+                lstvwOtherUser.Items.Add(user.Name);
+            }
+
         }
         public void LoadListRoom()
         {
             roomList = ChatRoom.GetAll().Where(room => room.users.Any(user => user.Id.CompareTo(this.currentUser.Id) == 0)).ToList();
+            if (roomList.Count == 0)
+            {
+                return;
+            }
+            lstvwRoom.Items.Clear();
             foreach (ChatRoom room in roomList)
             {
                 lstvwRoom.Items.Add(room.roomName);
             }
+
             currentRoom = roomList[0];
             otherUser = currentRoom.users.Where(user => user.Id.CompareTo(this.currentUser.Id) != 0).FirstOrDefault();
         }
         public void ClearMessages()
         {
-            foreach(Control control in pnMainChat.Controls)
+            foreach (Control control in pnMainChat.Controls)
             {
-                if(control is ChatComponent)
+                if (control is ChatComponent)
                 {
                     ChatComponent chatComponent = (ChatComponent)control;
                     if (chatComponent.chatMessage.TypeOfMessage == EnumTypeOfMessage.VIDEO)
                     {
-                        foreach(Control pnControl in chatComponent.pnMain.Controls)
+                        foreach (Control pnControl in chatComponent.pnMain.Controls)
                         {
                             pnControl.Dispose();
                         }
@@ -151,7 +176,7 @@ namespace ChatApp
             for (int i = 0; i < messages.Count; i++)
             {
                 bool mine = false;
-                if (messages[i].Sender.CompareTo(this.currentUser.Name) == 0)
+                if (messages[i].Sender.CompareTo(this.currentUser.Id) == 0)
                 {
                     mine = true;
                 }
@@ -205,7 +230,7 @@ namespace ChatApp
             if (mine)
             {
                 ChatComponent chatComponent = new ChatComponent(chatMessage);
-                chatComponent.Location = new Point(200, (10 + 150 * index) + pnMainChat.DisplayRectangle.Location.Y);
+                chatComponent.Location = new Point(450, (10 + 150 * index) + pnMainChat.DisplayRectangle.Location.Y);
                 pnMainChat.Controls.Add(chatComponent);
                 pnMainChat.ScrollControlIntoView(chatComponent);
 
@@ -255,9 +280,88 @@ namespace ChatApp
                 {
                     currentRoom = room;
                     otherUser = currentRoom.users.Where(user => user.Id.CompareTo(this.currentUser.Id) != 0).FirstOrDefault();
+                    lblChatMate.Text = "Chatmate: " + otherUser.Name;
+                    lblCurrentRoom.Text = "Current room: " + currentRoom.roomName;
                     LoadMessage();
                 }
             }
+        }
+
+        private void btnCreateRoom_Click(object sender, EventArgs e)
+        {
+            CreateNewRoom();
+        }
+        public void CreateNewRoom()
+        {
+
+            NewRoom form = new NewRoom(currentUser);
+
+            form.ShowDialog();
+            if (form.isClosed)
+            {
+                ChatRoom newCreateRoom = form.newlyChatRoom;
+                if (newCreateRoom != null)
+                {
+                    LoadListRoom();
+                }
+            }
+        }
+
+        private void lightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (AppMode.CurMODE.state.CheckMode("Dark"))
+            {
+                AppMode.CurMODE.state = new LightMode();
+            }
+            else {
+                return;
+            }
+            SwitchMode(AppMode.CurMODE);
+
+        }
+
+        private void darkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+
+            if (AppMode.CurMODE.state.CheckMode("Light"))
+            {
+                AppMode.CurMODE.state = new DarkMode();
+            }
+            else
+            {
+                return;
+            }
+            SwitchMode(AppMode.CurMODE);
+        }
+        public void SwitchMode(AppMode mode)
+        {
+            mode.state.SwitchMode();
+
+            this.BackColor = mode.state.primary;
+            pnMainChat.BackColor = mode.state.secondary;
+            txtChat.BackColor =mode.state.third;
+            lstvwOtherUser.BackColor = mode.state.fourth;
+            lstvwRoom.BackColor = mode.state.fourth;
+
+            btnCreateRoom.BackColor = mode.state.fourth;
+            btnFile.BackColor = mode.state.fourth;
+            btnSend.BackColor = mode.state.fourth;
+
+            lstvwOtherUser.ForeColor=mode.state.fifth;
+            txtChat.ForeColor=mode.state.fifth;
+            lstvwRoom.ForeColor=mode.state.fifth;
+            lblCurrentRoom.ForeColor=mode.state.fifth;
+            lblChatMate.ForeColor=mode.state.fifth;
+            btnCreateRoom.ForeColor=mode.state.fifth;
+            btnFile.ForeColor = mode.state.fifth;
+            btnSend.ForeColor = mode.state.fifth;
+
+        }
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

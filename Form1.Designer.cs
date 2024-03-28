@@ -50,6 +50,17 @@
             this.txtChat = new System.Windows.Forms.RichTextBox();
             this.lstvwRoom = new System.Windows.Forms.ListView();
             this.rchtxtDebug = new System.Windows.Forms.RichTextBox();
+            this.lstvwOtherUser = new System.Windows.Forms.ListView();
+            this.btnCreateRoom = new System.Windows.Forms.Button();
+            this.lblCurrentRoom = new System.Windows.Forms.Label();
+            this.lblChatMate = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.modeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.darkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnIcon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -64,20 +75,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOpenIcon)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnMainChat
             // 
             this.pnMainChat.AutoScroll = true;
-            this.pnMainChat.Location = new System.Drawing.Point(124, 13);
+            this.pnMainChat.Location = new System.Drawing.Point(168, 27);
             this.pnMainChat.Name = "pnMainChat";
-            this.pnMainChat.Size = new System.Drawing.Size(664, 393);
+            this.pnMainChat.Size = new System.Drawing.Size(868, 465);
             this.pnMainChat.TabIndex = 1;
             this.pnMainChat.Scroll += new System.Windows.Forms.ScrollEventHandler(this.pnMainChat_Scroll);
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(677, 412);
+            this.btnSend.Location = new System.Drawing.Point(925, 3);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(111, 26);
             this.btnSend.TabIndex = 2;
@@ -87,7 +100,7 @@
             // 
             // btnFile
             // 
-            this.btnFile.Location = new System.Drawing.Point(124, 409);
+            this.btnFile.Location = new System.Drawing.Point(168, 3);
             this.btnFile.Name = "btnFile";
             this.btnFile.Size = new System.Drawing.Size(114, 26);
             this.btnFile.TabIndex = 3;
@@ -98,7 +111,7 @@
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(10, 227);
+            this.lblLocation.Location = new System.Drawing.Point(83, 16);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(35, 13);
             this.lblLocation.TabIndex = 4;
@@ -108,7 +121,7 @@
             // lblCal
             // 
             this.lblCal.AutoSize = true;
-            this.lblCal.Location = new System.Drawing.Point(12, 256);
+            this.lblCal.Location = new System.Drawing.Point(23, 16);
             this.lblCal.Name = "lblCal";
             this.lblCal.Size = new System.Drawing.Size(35, 13);
             this.lblCal.TabIndex = 5;
@@ -129,7 +142,7 @@
             this.pnIcon.Controls.Add(this.pictureBox3);
             this.pnIcon.Controls.Add(this.pictureBox2);
             this.pnIcon.Controls.Add(this.pictureBox1);
-            this.pnIcon.Location = new System.Drawing.Point(568, 277);
+            this.pnIcon.Location = new System.Drawing.Point(816, 366);
             this.pnIcon.Name = "pnIcon";
             this.pnIcon.Size = new System.Drawing.Size(103, 129);
             this.pnIcon.TabIndex = 6;
@@ -259,7 +272,7 @@
             // 
             this.picOpenIcon.BackgroundImage = global::ChatApp.Properties.Resources.FeelsOkayMan;
             this.picOpenIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picOpenIcon.Location = new System.Drawing.Point(633, 413);
+            this.picOpenIcon.Location = new System.Drawing.Point(881, 8);
             this.picOpenIcon.Name = "picOpenIcon";
             this.picOpenIcon.Size = new System.Drawing.Size(24, 18);
             this.picOpenIcon.TabIndex = 7;
@@ -268,9 +281,9 @@
             // 
             // txtChat
             // 
-            this.txtChat.Location = new System.Drawing.Point(244, 409);
+            this.txtChat.Location = new System.Drawing.Point(296, 3);
             this.txtChat.Name = "txtChat";
-            this.txtChat.Size = new System.Drawing.Size(427, 26);
+            this.txtChat.Size = new System.Drawing.Size(623, 26);
             this.txtChat.TabIndex = 8;
             this.txtChat.Text = "";
             // 
@@ -278,9 +291,9 @@
             // 
             this.lstvwRoom.FullRowSelect = true;
             this.lstvwRoom.HideSelection = false;
-            this.lstvwRoom.Location = new System.Drawing.Point(7, 13);
+            this.lstvwRoom.Location = new System.Drawing.Point(7, 27);
             this.lstvwRoom.Name = "lstvwRoom";
-            this.lstvwRoom.Size = new System.Drawing.Size(111, 97);
+            this.lstvwRoom.Size = new System.Drawing.Size(155, 134);
             this.lstvwRoom.TabIndex = 9;
             this.lstvwRoom.UseCompatibleStateImageBehavior = false;
             this.lstvwRoom.View = System.Windows.Forms.View.List;
@@ -288,27 +301,131 @@
             // 
             // rchtxtDebug
             // 
-            this.rchtxtDebug.Location = new System.Drawing.Point(7, 116);
+            this.rchtxtDebug.Location = new System.Drawing.Point(7, 375);
             this.rchtxtDebug.Name = "rchtxtDebug";
-            this.rchtxtDebug.Size = new System.Drawing.Size(100, 96);
+            this.rchtxtDebug.Size = new System.Drawing.Size(155, 108);
             this.rchtxtDebug.TabIndex = 10;
             this.rchtxtDebug.Text = "";
+            this.rchtxtDebug.Visible = false;
+            // 
+            // lstvwOtherUser
+            // 
+            this.lstvwOtherUser.FullRowSelect = true;
+            this.lstvwOtherUser.HideSelection = false;
+            this.lstvwOtherUser.Location = new System.Drawing.Point(7, 167);
+            this.lstvwOtherUser.Name = "lstvwOtherUser";
+            this.lstvwOtherUser.Size = new System.Drawing.Size(155, 141);
+            this.lstvwOtherUser.TabIndex = 11;
+            this.lstvwOtherUser.UseCompatibleStateImageBehavior = false;
+            this.lstvwOtherUser.View = System.Windows.Forms.View.List;
+            // 
+            // btnCreateRoom
+            // 
+            this.btnCreateRoom.Location = new System.Drawing.Point(7, 314);
+            this.btnCreateRoom.Name = "btnCreateRoom";
+            this.btnCreateRoom.Size = new System.Drawing.Size(111, 23);
+            this.btnCreateRoom.TabIndex = 12;
+            this.btnCreateRoom.Text = "Tạo phòng chat";
+            this.btnCreateRoom.UseVisualStyleBackColor = true;
+            this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
+            // 
+            // lblCurrentRoom
+            // 
+            this.lblCurrentRoom.AutoSize = true;
+            this.lblCurrentRoom.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurrentRoom.Location = new System.Drawing.Point(12, 340);
+            this.lblCurrentRoom.Name = "lblCurrentRoom";
+            this.lblCurrentRoom.Size = new System.Drawing.Size(83, 15);
+            this.lblCurrentRoom.TabIndex = 13;
+            this.lblCurrentRoom.Text = "Current room: ";
+            // 
+            // lblChatMate
+            // 
+            this.lblChatMate.AutoSize = true;
+            this.lblChatMate.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChatMate.Location = new System.Drawing.Point(12, 355);
+            this.lblChatMate.Name = "lblChatMate";
+            this.lblChatMate.Size = new System.Drawing.Size(63, 15);
+            this.lblChatMate.TabIndex = 14;
+            this.lblChatMate.Text = "Chatmate: ";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnSend);
+            this.panel1.Controls.Add(this.btnFile);
+            this.panel1.Controls.Add(this.lblLocation);
+            this.panel1.Controls.Add(this.lblCal);
+            this.panel1.Controls.Add(this.picOpenIcon);
+            this.panel1.Controls.Add(this.txtChat);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 501);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1048, 41);
+            this.panel1.TabIndex = 15;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modeToolStripMenuItem,
+            this.logOutToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1048, 24);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // modeToolStripMenuItem
+            // 
+            this.modeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lightToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.darkToolStripMenuItem});
+            this.modeToolStripMenuItem.Name = "modeToolStripMenuItem";
+            this.modeToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.modeToolStripMenuItem.Text = "Mode";
+            // 
+            // lightToolStripMenuItem
+            // 
+            this.lightToolStripMenuItem.Name = "lightToolStripMenuItem";
+            this.lightToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.lightToolStripMenuItem.Text = "Light";
+            this.lightToolStripMenuItem.Click += new System.EventHandler(this.lightToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(98, 6);
+            // 
+            // darkToolStripMenuItem
+            // 
+            this.darkToolStripMenuItem.Name = "darkToolStripMenuItem";
+            this.darkToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.darkToolStripMenuItem.Text = "Dark";
+            this.darkToolStripMenuItem.Click += new System.EventHandler(this.darkToolStripMenuItem_Click);
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.logOutToolStripMenuItem.Text = "Log out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1048, 542);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblChatMate);
+            this.Controls.Add(this.lblCurrentRoom);
+            this.Controls.Add(this.btnCreateRoom);
+            this.Controls.Add(this.lstvwOtherUser);
             this.Controls.Add(this.rchtxtDebug);
             this.Controls.Add(this.lstvwRoom);
-            this.Controls.Add(this.picOpenIcon);
-            this.Controls.Add(this.txtChat);
             this.Controls.Add(this.pnIcon);
-            this.Controls.Add(this.lblCal);
-            this.Controls.Add(this.lblLocation);
-            this.Controls.Add(this.btnFile);
-            this.Controls.Add(this.btnSend);
             this.Controls.Add(this.pnMainChat);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -326,6 +443,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picOpenIcon)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,6 +475,17 @@
         private System.Windows.Forms.RichTextBox txtChat;
         private System.Windows.Forms.ListView lstvwRoom;
         private System.Windows.Forms.RichTextBox rchtxtDebug;
+        private System.Windows.Forms.ListView lstvwOtherUser;
+        private System.Windows.Forms.Button btnCreateRoom;
+        private System.Windows.Forms.Label lblCurrentRoom;
+        private System.Windows.Forms.Label lblChatMate;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem modeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem darkToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }
 
